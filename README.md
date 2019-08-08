@@ -1,7 +1,7 @@
 ## ELECTRA Issues & Other Documentation
 
 ### Issues Workflow:
-1. Create a user story in the **elctra-issues** *Issues* tab
+1. Create a user story in the **documentation** *Issues* tab
 2. Go to the **electrala** *Projects* tab
 3. Add the issue to the current sprint's *Backlog* column
 4. Assign the issue & move it to the *Doing* column
