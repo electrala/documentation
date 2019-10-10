@@ -5,7 +5,7 @@
   ![](images/successful_AWS_Terminal.png)
   - If you got a message that says the command doesn't exist, try and redo the steps to install aws cli
 - Head over to the [aws website](https://aws.amazon.com/) and create a user
-  ![](images/create_AWS_Account.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/create_AWS_Account.png)
 - In the search bar, type in S3 and navigate to it
   ![](images/search_Bar_S3.png)
 - Create a bucket with a meaningful name **AND** put the bucket region to _US West (Oregon)_
