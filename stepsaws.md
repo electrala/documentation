@@ -2,14 +2,14 @@
 
 - First step is to Install [aws cli](https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html#awscli-install-osx-pip)
 - After cli is installed, run command `aws` in your terminal and it should output:
-  ![](images/successful_AWS_Terminal.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/successful_AWS_Terminal.png)
   - If you got a message that says the command doesn't exist, try and redo the steps to install aws cli
 - Head over to the [aws website](https://aws.amazon.com/) and create a user
   ![](https://github.com/electrala/documentation/blob/master/Images/create_AWS_Account.png)
 - In the search bar, type in S3 and navigate to it
-  ![](images/search_Bar_S3.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/search_Bar_S3.png)
 - Create a bucket with a meaningful name **AND** put the bucket region to _US West (Oregon)_
-  ![](images/bucket_AWS_Region.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/bucket_AWS_Region.png)
   > NOTE: you will be referencing this region later with **us-west-2**
 - Go ahead and click next on the rest of the sections and create the bucket
 - We are done on this section for now!
@@ -17,7 +17,7 @@
 ---
 
 - Click on the name of the bucket you just made
-  ![](images/click_Bucket_Name.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/click_Bucket_Name.png)
 
 ---
 
@@ -25,7 +25,7 @@
 - In the search bar, type in **IAM** and click on the link
 - As good practice, we will be making a group and setting policies/rules that are attached to whatever user we put in that group
 - On the left pane, click the `Groups` link
-  ![](images/iam_User_Create_Groups.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/iam_User_Create_Groups.png)
 - Click `Create new Group`
 - Input meaningful group name and hit next
 - On the _Attach Permissions_ step, type in S3 in the search bar and check the box that says `AmazonS3FullAccess`
@@ -33,25 +33,25 @@
 - Click next and create the group!
 - Now that the group is created, it's time to make a user
 - On the left pane, click the `Users` link
-  ![](images/iam_User_Create_Pane.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/iam_User_Create_Pane.png)
 - Click the blue `Add User` button to begin creating a user
 - Input a meaningful user name and check the box for `Programmatic access` then click next
-  ![](images/add_Username_Role.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/add_Username_Role.png)
 - The group you created should show up, go ahead and check the box and hit next
-  ![](images/set_Permissions_User.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/set_Permissions_User.png)
 - Use the default values for the next steps and create the User but DO NOT close the tab yet
 - On **Step 5**, after creating the user, make sure you copy or download your Access Key and Secret Key
-  ![](images/download_AWS_User_Keys.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/download_AWS_User_Keys.png)
   > Note: This step is SUPER important because the Secret Access key and Access Key ID will not appear again after you close the page.
 - After download, you can click the close button
 - You should now be able to see the user you created and the group that user is a part of
-  ![](images/successful_User_Creation.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/successful_User_Creation.png)
 
 ---
 
 - On the pane to the left, navigate to `Roles` link and click the button _Create Role_
 - On the Create Role page, click `Web Identity` so we can create a Cognito Role. Identity provider will be [Amazon Cognito](https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html) and input a meaningful identity pool id and click next
-  ![](images/create_Cognito_Role.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/create_Cognito_Role.png)
 - Click `Create Policy` button on the top left
 - Navigate to the JSON app and replace the json with the below JSON and click next
 
