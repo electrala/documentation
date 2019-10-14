@@ -12,7 +12,7 @@ We will be going over the steps of how to create a bucket in S3 using plain Java
 
 ### Here are the steps!
 
-1. [Install AWS CLI](#Create_an_AWS_Account)
+1. [Install AWS CLI](#create_an_aws_account)
 2. [Create AWS Account](#createAccount)
 3. [Create an S3 Bucket](#createBucket)
 4. [Create an IAM Group](#makeGroup)
