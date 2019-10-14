@@ -12,18 +12,18 @@ We will be going over the steps of how to create a bucket in S3 using plain Java
 
 ### Here are the steps!
 
-1. [Install AWS CLI](#create-an-aws-account)
-2. [Create AWS Account](#createAccount)
-3. [Create an S3 Bucket](#createBucket)
-4. [Create an IAM Group](#makeGroup)
-5. [Create an IAM User](#makeUser)
-6. [Make a Cognito Pool id](#makeCognitoRole)
-7. [Get Unautherized Role arn](#getARN)
-8. [Input Bucket Policy](#inputBucketPolicy)
-9. [Setting up my local environment](#environmentSetup)
-10. [Create your project](#createProject)
+1. [Install AWS CLI](#install-the-aws-cli)
+2. [Create AWS Account](#create-an-aws-account)
+3. [Create an S3 Bucket](#create-a-bucket)
+4. [Create an IAM Group](#create-a-group-in-iam)
+5. [Create an IAM User](#create-a-user)
+6. [Make a Cognito Pool id](#make-a-cognito-role)
+7. [Get Unautherized Role arn](#get-unautherized-cognito-role-arn)
+8. [Input Bucket Policy](#add-policies-to-your-bucket)
+9. [Setting up my local environment](#setting-up-unix-and-windows-environment)
+10. [Create your project](#create-a-project-in-your-editor)
 
-## Install the AWS CLI {#installAWS}
+## Install the AWS CLI
 
 - First step is to Install [aws cli](https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html#awscli-install-osx-pip)
 - After cli is installed, run command `aws` in your terminal and it should output:
@@ -40,7 +40,7 @@ We will be going over the steps of how to create a bucket in S3 using plain Java
 
 ---
 
-## Create a Bucket {#createBucket}
+## Create a Bucket
 
 - In the search bar, type in S3 and navigate to it
   ![](https://github.com/electrala/documentation/blob/master/Images/search_Bar_S3.png)
@@ -52,7 +52,7 @@ We will be going over the steps of how to create a bucket in S3 using plain Java
 
 ---
 
-## Create a Group in IAM {#makeGroup}
+## Create a Group in IAM
 
 - Navigate to your [AWS Management Console](https://aws.amazon.com/console/home?region=us-west-2)
 - In the search bar, type in **IAM** and click on the link
@@ -68,7 +68,7 @@ We will be going over the steps of how to create a bucket in S3 using plain Java
 
 ---
 
-## Create a user {#makeUser}
+## Create a user
 
 - Now that the group is created, it's time to make a user
 - On the left pane, click the `Users` link
@@ -88,7 +88,7 @@ We will be going over the steps of how to create a bucket in S3 using plain Java
 
 ---
 
-## Make a Cognito Role {#makeCognitoRole}
+## Make a Cognito Role
 
 - Navigate to _Services_ drop down on the top of your nav bar and type **Cognito** in the search bar and click it [^2]
   ![](https://github.com/electrala/documentation/blob/master/Images/services_Search.png)
@@ -107,7 +107,7 @@ We will be going over the steps of how to create a bucket in S3 using plain Java
 
 ---
 
-## Get Unautherized Cognito Role ARN {#getARN}
+## Get Unautherized Cognito Role ARN
 
 - Navigate to your IAM from the Services drop down menu in your navbar
   ![](https://github.com/electrala/documentation/blob/master/Images/navigate_To_IAM.png)
@@ -118,7 +118,7 @@ We will be going over the steps of how to create a bucket in S3 using plain Java
 
 ---
 
-## Add policies to your bucket {#inputBucketPolicy}
+## Add policies to your bucket
 
 - Navigate to the bucket you created for this project
   ![](https://github.com/electrala/documentation/blob/master/Images/search_Bar_S3.png)
@@ -172,7 +172,7 @@ We will be going over the steps of how to create a bucket in S3 using plain Java
 
 ---
 
-## Setting up Unix and Windows environment {#environmentSetup}
+## Setting up Unix and Windows environment
 
 - Start your Terminal/cmd
 - run the command 'aws configure' in your terminal/cmd and
@@ -198,7 +198,7 @@ We will be going over the steps of how to create a bucket in S3 using plain Java
 
 ---
 
-## Create a Project in your editor {#createProject}
+## Create a Project in your editor
 
 - Create a Project Directory and in the project terminal, input `npm init -y`
 - Now that you have that set up, you'll need to install aws-sdk with `npm i aws-sdk && npm i uuid` in your project directory
