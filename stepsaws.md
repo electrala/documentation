@@ -12,7 +12,7 @@ We will be going over the steps of how to create a bucket in S3 using plain Java
 
 ### Here are the steps!
 
-1. [Install AWS CLI](#installAWS)
+1. [Install AWS CLI](#Create_an_AWS_Account)
 2. [Create AWS Account](#createAccount)
 3. [Create an S3 Bucket](#createBucket)
 4. [Create an IAM Group](#makeGroup)
@@ -27,25 +27,25 @@ We will be going over the steps of how to create a bucket in S3 using plain Java
 
 - First step is to Install [aws cli](https://docs.aws.amazon.com/cli/latest/userguide/install-macos.html#awscli-install-osx-pip)
 - After cli is installed, run command `aws` in your terminal and it should output:
-  ![](images/successful_AWS_Terminal.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/successful_AWS_Terminal.png)
   - If you got a message that says the command doesn't exist, try and redo the steps to install aws cli
     > If you want to know more about the aws command, you can look up the [documentation](https://docs.aws.amazon.com/sdk-for-javascript/index.html) or in a windows type **help aws**, mac type **man aws** for a manual on the parameters and how to use it. [^1]
 
 ---
 
-## Create an AWS Account {#createAccount}
+## Create an AWS Account
 
 - Head over to the [aws website](https://aws.amazon.com/) and create an account
-  ![](images/create_AWS_Account.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/create_AWS_Account.png)
 
 ---
 
 ## Create a Bucket {#createBucket}
 
 - In the search bar, type in S3 and navigate to it
-  ![](images/search_Bar_S3.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/search_Bar_S3.png)
 - Create a bucket with a meaningful name **AND** put the bucket region to _US West (Oregon)_
-  ![](images/bucket_AWS_Region.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/bucket_AWS_Region.png)
   > NOTE: This is the closest working region. You will be referencing this region later with **us-west-2**
 - Go ahead and click next on the rest of the sections and create the bucket
 - We are done on this section for now!
@@ -59,7 +59,7 @@ We will be going over the steps of how to create a bucket in S3 using plain Java
   > If you want to know more about IAM, complete [documentation is here](https://docs.aws.amazon.com/iam/)
 - As [best practice](https://docs.aws.amazon.com/AmazonS3/latest/dev/security-best-practices.html), we will be making a group and setting policies/rules that are attached to whatever user we put in that group
 - On the left pane, click the `Groups` link
-  ![](images/iam_User_Create_Groups.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/iam_User_Create_Groups.png)
 - Click `Create new Group`
 - Input meaningful group name and hit next
 - On the _Attach Permissions_ step, type in S3 in the search bar and check the box that says `AmazonS3FullAccess`
@@ -72,37 +72,37 @@ We will be going over the steps of how to create a bucket in S3 using plain Java
 
 - Now that the group is created, it's time to make a user
 - On the left pane, click the `Users` link
-  ![](images/iam_User_Create_Pane.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/iam_User_Create_Pane.png)
 - Click the blue `Add User` button to begin creating a user
 - Input a meaningful user name and check the box for `Programmatic access` then click next
-  ![](images/add_Username_Role.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/add_Username_Role.png)
 - The group you created should show up, go ahead and check the box and hit next
-  ![](images/set_Permissions_User.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/set_Permissions_User.png)
 - Use the default values for the next steps and create the User but DO NOT close the tab yet
 - On **Step 5**, after creating the user, make sure you copy or download your Access Key and Secret Key
-  ![](images/download_AWS_User_Keys.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/download_AWS_User_Keys.png)
   > Note: This step is SUPER important because the Secret Access key and Access Key ID will not appear again after you close this page.
 - After you download, you can click the close button
 - You should now be able to see the user you created and the group that the user is a part of
-  ![](images/successful_User_Creation.png#border)
+  ![](https://github.com/electrala/documentation/blob/master/Images/successful_User_Creation.png#border)
 
 ---
 
 ## Make a Cognito Role {#makeCognitoRole}
 
 - Navigate to _Services_ drop down on the top of your nav bar and type **Cognito** in the search bar and click it [^2]
-  ![](images/services_Search.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/services_Search.png)
 - On this page you have two options. Go ahead and click on the _Manage Identity Pools_ button
-  ![](images/manage_Identity_Pool_Button.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/manage_Identity_Pool_Button.png)
 - Next click on the _Create New Identity Pool_ button
-  ![](images/create_New_Identity_Pool_Button.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/create_New_Identity_Pool_Button.png)
 - Input a meaningful identity pool name and check the `Enable access to unauthenticated identities` check box then click _Create Pool_ button
-  ![](images/create_New_Identity_Pool.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/create_New_Identity_Pool.png)
 - Make sure to read the differences between authenticated [^3] and unauthenticated [^4] users on the following page. Check also how to [grant least privileges](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html#grant-least-privilege) to users.
 - Click `Allow`
-  ![](images/create_Unauthenticated_user.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/create_Unauthenticated_user.png)
 - There is a bit of things to pay special attention to on this page. Make sure your platform is set to javascript and copy your identity pool id.
-  ![](images/finished_Cognito_Identity_Pool.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/finished_Cognito_Identity_Pool.png)
   > Note: Don't freak out if you closed this window. You can get the `pool credentials` by clicking on **services** drop down on your navbar and searching **cognito** and pressing the `manage identity pool` button and clicking on the pool id you created.
 
 ---
@@ -110,20 +110,20 @@ We will be going over the steps of how to create a bucket in S3 using plain Java
 ## Get Unautherized Cognito Role ARN {#getARN}
 
 - Navigate to your IAM from the Services drop down menu in your navbar
-  ![](images/navigate_To_IAM.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/navigate_To_IAM.png)
 - Navigate to Roles on the left pane and you should see the cognito role you created. Both an unautherized and autherized version. Click on the Unautherized role name.
-  ![](images/unautherized_Role.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/unautherized_Role.png)
 - You should be able to see the ARN now. Go ahead and copy and save that arn. You'll be using it in the next step.
-  ![](images/copy_ARN.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/copy_ARN.png)
 
 ---
 
 ## Add policies to your bucket {#inputBucketPolicy}
 
 - Navigate to the bucket you created for this project
-  ![](images/search_Bar_S3.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/search_Bar_S3.png)
 - Click the bucket name you created
-  ![](images/click_Bucket_Name.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/click_Bucket_Name.png)
 - Navigate to `Permissions` then `Bucket Policy` and input JSON
 
   ```json
@@ -148,7 +148,7 @@ We will be going over the steps of how to create a bucket in S3 using plain Java
   }
   ```
 
-  ![](images/bucket_Policy.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/bucket_Policy.png)
   replace names in caps with your bucket name and the unautherized cognito role arn you created then click save
 
 - On the same bucket, navigate to `CORS Configuration` and input below code to enable CORS and then click the save button on the right of your screen
@@ -168,7 +168,7 @@ We will be going over the steps of how to create a bucket in S3 using plain Java
   </CORSConfiguration>
   ```
 
-  ![](images/enable_CORS.png)
+  ![](https://github.com/electrala/documentation/blob/master/Images/enable_CORS.png)
 
 ---
 
